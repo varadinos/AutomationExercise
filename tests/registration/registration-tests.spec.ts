@@ -3,7 +3,7 @@ import { test, expect } from '../fixtures/fixtures';
 
 
 test("Register User", async ({loginSignupPage, registrationPage, accountCreatedPage}) => {
-    const uniqueEmail = `svtest_${Date.now()}@example.com`;
+    const uniqueEmail = process.env.NAME! + `_${Date.now()}@example.com`;
     console.log("Email addres used for registration: ", uniqueEmail);
     await loginSignupPage.newUserSignup(process.env.NAME!, uniqueEmail);
     await registrationPage.enterAccountInformation();
