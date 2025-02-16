@@ -1,4 +1,3 @@
-import { log } from 'console';
 import { test, expect } from '../fixtures/fixtures'
 
 test('Login with valid credentials', async ({loginSignupPage}) => {
