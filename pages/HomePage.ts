@@ -5,28 +5,16 @@ export class HomePage {
     readonly loginSignupButton: Locator;
     readonly consentButton: Locator;
     readonly caruselInner: Locator;
-    readonly url = "https://www.automationexercise.com";
+    readonly url: string;
+    readonly homePageTitle: string;
 
     constructor (page: Page) {
         this.page = page;
         this.loginSignupButton = page.getByRole('link', { name: 'Signup / Login'});
         this.consentButton = page.getByRole('button', {name: 'Consent'});
         this.caruselInner = page.locator('#slider-carousel');
-    }
-
-    //Method to get the page title:
-    async getPageTitle(): Promise<string> {
-        return this.page.title();
-    }
-    
-    //Method to assert the page title:
-    async assertPageTitle(expectedTitle: string): Promise<void> {
-        await expect(this.page).toHaveTitle(expectedTitle);
-    }
-
-    //Method to click consent button:
-    async clickConsentButton(): Promise<void>{
-        await this.consentButton.click();
+        this.homePageTitle = 'Automation Exercise';
+        this.url = "https://www.automationexercise.com";
     }
 
     //Method to click Login/Signup button

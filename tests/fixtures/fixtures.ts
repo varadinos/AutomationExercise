@@ -33,16 +33,15 @@ export const test = base.extend<Fixtures>({
         await page.close();
       },
 
-    homePage: async ({page}, use) => {
+    homePage: async ({page, basePage}, use) => {
         const homePage = new HomePage(page);
         await homePage.goTo();
-        await homePage.clickConsentButton();
+        await basePage.clickConsentButton();
         await use(homePage);
     },
     
-    loginSignupPage: async ({page}, use) => {
+    loginSignupPage: async ({page, basePage}, use) => {
         const loginSignupPage = new LoginSignupPage(page);
-        const basePage = new BasePage(page);
         await loginSignupPage.goTo();
         await basePage.clickConsentButton();
         await use(loginSignupPage);

@@ -1,6 +1,6 @@
 import { test, expect } from '../tests/fixtures/fixtures';
 
-test('Verify that login/signup page is loaded successfully', async ({loginSignupPage}) => {
+test('Verify that login/signup page is loaded successfully', async ({loginSignupPage, basePage}) => {
     await loginSignupPage.verifyLoginLabelIsVisible();
-    await loginSignupPage.assertPageTitle('Automation Exercise - Signup / Login');
+    await basePage.assertPageTitle(loginSignupPage.loginSignupPageTitle);
 })

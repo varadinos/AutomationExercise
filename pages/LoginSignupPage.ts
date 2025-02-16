@@ -18,6 +18,7 @@ export class LoginSignupPage extends BasePage {
     readonly loggedInText: Locator;
     readonly emailExistMsg: Locator;
     readonly logoutButton:  Locator;
+    readonly loginSignupPageTitle: string;
     
 
     constructor (page: Page) {
@@ -37,6 +38,7 @@ export class LoginSignupPage extends BasePage {
         this.loggedInText = page.getByText('Logged in as Sia QA');
         this.emailExistMsg = page.locator('p', {hasText: "Email Address already exist!"});
         this.logoutButton = page.locator('a', {hasText: " Logout"});
+        this.loginSignupPageTitle = 'Automation Exercise - Signup / Login';
 
     }
 
@@ -44,16 +46,6 @@ export class LoginSignupPage extends BasePage {
     //Method to go to signup / login page
     async goTo() {
         await this.page.goto(this.url);
-    }
-
-    //Method to get the page title:
-    async getPageTitle(): Promise<string> {
-        return this.page.title();
-    }
-
-    //Method to assert the page title:
-    async assertPageTitle(expectedTitle: string): Promise<void> {
-        await expect(this.page).toHaveTitle(expectedTitle);
     }
 
     //Method to verify 'New User Signup!' label is visible

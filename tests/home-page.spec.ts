@@ -7,9 +7,8 @@ test('Verify that home page is visible successfully', async ({homePage}) => {
 })
 
 
-test('Verify Home page title', async ({homePage}) => {
-    const expectedPageTitle: string = "Automation Exercise";
-    await homePage.assertPageTitle(expectedPageTitle);
+test('Verify Home page title', async ({homePage, basePage}) => {
+    await basePage.assertPageTitle(homePage.homePageTitle);
 });
 
 
