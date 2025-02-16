@@ -5,8 +5,8 @@ import { HomePage } from "../../pages/HomePage";
 import { LoginSignupPage } from "../../pages/LoginSignupPage";
 import { BasePage } from '../../pages/BasePage';
 import { RegistrationPage } from '../../pages/RegistrationPage';
-import { AccountCreated } from '../../pages/AccountCreated';
-import { ContactUs } from '../../pages/ContactUs'
+import { AccountCreatedPage } from '../../pages/AccountCreatedPage';
+import { ContactUsPage } from '../../pages/ContactUsPage'
 
 dotenv.config();
 
@@ -15,8 +15,8 @@ type Fixtures = {
     loginSignupPage: LoginSignupPage;
     basePage: BasePage;
     registrationPage: RegistrationPage;
-    accountCreatedPage: AccountCreated;
-    contactUsPage: ContactUs;
+    accountCreatedPage: AccountCreatedPage;
+    contactUsPage: ContactUsPage;
 
 };
 
@@ -60,12 +60,12 @@ export const test = base.extend<Fixtures>({
     },
     
     accountCreatedPage: async({page}, use) => {
-        const accountCreatedPage = new AccountCreated(page);
+        const accountCreatedPage = new AccountCreatedPage(page);
         await use(accountCreatedPage);
     },
 
     contactUsPage: async({page,basePage}, use) => {
-        const contactUsPage = new ContactUs(page);
+        const contactUsPage = new ContactUsPage(page);
         await contactUsPage.goTo();
         await basePage.clickConsentButton();
         await use(contactUsPage);

@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
-export class ContactUs {
+export class ContactUsPage {
     readonly page: Page;
     readonly contactUsPageTitle: string;
     readonly url: string;

@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
-export class AccountCreated {
+export class AccountCreatedPage {
     readonly page: Page;
     readonly accountCreatedMessage: Locator;
     readonly congratMessage: Locator;
