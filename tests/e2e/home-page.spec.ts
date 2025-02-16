@@ -1,4 +1,4 @@
-import { test, expect } from '../tests/fixtures/fixtures';
+import { test, expect } from '../../setup/fixtures'
 
 test('Verify that home page is visible successfully', async ({homePage}) => {
     await homePage.verifyThatHomePageIsVisibe();

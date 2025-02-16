@@ -1,12 +1,12 @@
 import {test as base} from '@playwright/test';
 import playwright from 'playwright';
 import dotenv from 'dotenv';
-import { HomePage } from "../../pages/HomePage";
-import { LoginSignupPage } from "../../pages/LoginSignupPage";
-import { BasePage } from '../../pages/BasePage';
-import { RegistrationPage } from '../../pages/RegistrationPage';
-import { AccountCreatedPage } from '../../pages/AccountCreatedPage';
-import { ContactUsPage } from '../../pages/ContactUsPage'
+import { HomePage } from "../pages/HomePage";
+import { LoginSignupPage } from "../pages/LoginSignupPage";
+import { BasePage } from '../pages/BasePage';
+import { RegistrationPage } from '../pages/RegistrationPage';
+import { AccountCreatedPage } from '../pages/AccountCreatedPage';
+import { ContactUsPage } from '../pages/ContactUsPage'
 
 dotenv.config();
 

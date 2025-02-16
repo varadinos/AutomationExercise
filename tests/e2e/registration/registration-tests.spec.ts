@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/fixtures';
+import { test, expect } from '../../../setup/fixtures'
 
 
 test("Register User", async ({loginSignupPage, registrationPage, accountCreatedPage}) => {

@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/fixtures'
+import { test, expect } from '../../../setup/fixtures'
 
 test('Login with valid credentials', async ({loginSignupPage}) => {
     await loginSignupPage.loginWithValidCredentials();
