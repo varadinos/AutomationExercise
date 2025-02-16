@@ -45,10 +45,6 @@ export class ContactUs {
         await this.contactUsSubmitButton.click();
     }
 
-    async acceptAlert():Promise<void> {
-       await this.page.on('dialog', dialog => dialog.accept())
-    }
-
     async validateSuccessMessage():Promise<void> {
         await expect(this.contactUsSuccessMessage).toBeVisible();
         await expect(this.contactUsSuccessMessage).toHaveText('Success! Your details have been submitted successfully.');

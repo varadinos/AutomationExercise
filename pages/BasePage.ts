@@ -25,4 +25,8 @@ export class BasePage {
         await this.consentButton.click();
     }
 
+    //Method to accept alerts
+    async acceptAlert():Promise<void> {
+        await this.page.on('dialog', dialog => dialog.accept())
+     }
 }
