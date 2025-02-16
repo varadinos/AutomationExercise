@@ -1,6 +1,4 @@
-import { beforeEach } from 'node:test';
 import { test, expect } from '../tests/fixtures/fixtures';
-import { BaseTest } from '../utils/base-test';
 
 test('Verify that home page is visible successfully', async ({homePage}) => {
     await homePage.verifyThatHomePageIsVisibe();

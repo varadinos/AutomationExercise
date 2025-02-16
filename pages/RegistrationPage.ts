@@ -1,6 +1,5 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 import { BasePage } from './BasePage';
-import { promises } from 'dns';
 
 export class RegistrationPage extends BasePage {
     readonly page: Page;
