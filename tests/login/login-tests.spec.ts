@@ -16,7 +16,5 @@ test('Click login button with empty username and password', async ({loginSignupP
 })
 
 test('Logout User', async ({loginSignupPage}) => {
-    await loginSignupPage.loginWithValidCredentials();
-    await loginSignupPage.logoutButton.click();
-    await loginSignupPage.verifyLoginLabelIsVisible();
+    await loginSignupPage.logoutUser();
 })

@@ -87,5 +87,11 @@ export class LoginSignupPage extends BasePage {
         await expect(this.emailExistMsg).toBeVisible();
         await expect(this.emailExistMsg).toHaveText("Email Address already exist!");
     }
+
+    async logoutUser(): Promise<void>{
+        await this.loginWithValidCredentials();
+        await this.logoutButton.click();
+        await this.verifyLoginLabelIsVisible();
+    }
 }
 
