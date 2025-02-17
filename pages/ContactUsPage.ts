@@ -12,6 +12,8 @@ export class ContactUsPage {
     readonly contactUsMessageInput: Locator;
     readonly contactUsSubmitButton: Locator;
     readonly contactUsSuccessMessage: Locator;
+    readonly contactUsSuccessMessageText: string;
+    readonly getInTouchLabelText: string;
     
     constructor (page: Page) {
         this.page = page;
@@ -25,16 +27,13 @@ export class ContactUsPage {
         this.contactUsMessageInput = page.getByPlaceholder('Your Message Here');
         this.contactUsSubmitButton = page.locator('[data-qa="submit-button"]');
         this.contactUsSuccessMessage = page.locator('#contact-page').getByText('Success! Your details have been submitted successfully.');
+        this.contactUsSuccessMessageText = 'Success! Your details have been submitted successfully.';
+        this.getInTouchLabelText = 'Get In Touch';
     }
    
     //Method to go to contact us page
     async goTo() {
         await this.page.goto(this.url);
-    }
-
-    async verifyGetInTouchIsVisible():Promise<void> {
-        await expect(this.getInTouchLabel).toBeVisible();
-        await expect(this.getInTouchLabel).toHaveText("Get In Touch");
     }
 
     async fillContactUsForm():Promise<void> {
@@ -45,8 +44,5 @@ export class ContactUsPage {
         await this.contactUsSubmitButton.click();
     }
 
-    async validateSuccessMessage():Promise<void> {
-        await expect(this.contactUsSuccessMessage).toBeVisible();
-        await expect(this.contactUsSuccessMessage).toHaveText('Success! Your details have been submitted successfully.');
-    }
+    
 }
